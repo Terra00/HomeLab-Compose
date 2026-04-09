@@ -1,0 +1,35 @@
+services:
+  db_recipes:
+    image: postgres:17-alpine
+    container_name: tandoor-db
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    labels:
+      homepage.group: Non accessibili 
+      homepage.name: Tandoor DB
+      homepage.icon: tandoor-recipes        
+
+  recipes:
+    image: vabene1111/recipes
+    container_name: tandoor
+    ports:
+      - 8010:80
+    env_file:
+      - ./.env
+    volumes:
+      - ./files:/opt/recipes/staticfiles
+      - ./media:/opt/recipes/mediafiles
+    restart: unless-stopped
+    dns: 
+      - 8.8.8.8
+      - 8.8.4.4
+    depends_on:
+      - db_recipes
+    labels:
+      homepage.group: Utili
+      homepage.name: Tandoor
+      homepage.icon: tandoor-recipes      
+      homepage.href: http://10.0.0.51:8010

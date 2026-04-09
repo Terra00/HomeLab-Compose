@@ -1,0 +1,16 @@
+name: portainer
+services:
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    labels:
+      homepage.group: Utili
+      homepage.name: Portainer
+      homepage.icon: portainer      
+      homepage.href: http://10.0.0.51:9000

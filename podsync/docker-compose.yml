@@ -1,0 +1,19 @@
+services:
+  podsync:
+    container_name: podsync
+    image: tdeutsch/podsync:latest
+    ports:
+      - 8004:8080
+    volumes:
+      - "./data:/app/data"
+      - "./config.toml:/app/config.toml"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    restart: "unless-stopped"
+    labels:
+      homepage.group: Media
+      homepage.name: Podsync
+      homepage.icon: google-podcasts      
+      homepage.href: http://10.0.0.51:8004
+

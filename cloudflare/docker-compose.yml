@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  cloudflare-ddns:
+    image: favonia/cloudflare-ddns:latest
+    container_name: cloudflare-ddns
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      CF_API_TOKEN: ${CF_API_TOKEN}
+      DOMAINS: ${DOMAINS}
+      PROXIED: ${PROXIED}
+      IP6_PROVIDER: ${IP6_PROVIDER}
+      IP_PROVIDER: ${IP_PROVIDER}
+      CHECK_INTERVAL: ${CHECK_INTERVAL}
+      TZ: ${TZ}
+    labels:
+      homepage.group: Web
+      homepage.name: Cloudflare
+      homepage.icon: cloudflare

@@ -1,0 +1,31 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+title: "Homelab"
+background:
+  image: https://wallpapers.com/images/high/blue-4k-firewall-web-spdkbjergnyqvzcf.webp
+  blur: xl
+  saturate: 40
+  britness: 25
+  opacity: 50
+showStats: true
+
+
+layout:
+  Utili:
+    style: column
+    columns: 2
+  Media:
+    style: column
+    columns: 2
+  Web:
+    style: column
+    columns: 2
+  Non accessibili:
+    style: column
+    columns: 2

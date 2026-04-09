@@ -1,0 +1,7 @@
+address: 0.0.0.0
+port: 8080
+users:
+  - username: admin
+    password: changeme!!
+    directory: /data
+    permissions: CRUD

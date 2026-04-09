@@ -1,0 +1,23 @@
+version: "3"
+services:
+  sillytavern:
+    build: ..
+    container_name: sillytavern
+    hostname: sillytavern
+    image: ghcr.io/sillytavern/sillytavern:latest
+    ports:
+      - "8008:8000"
+    volumes:
+      - "./config:/home/node/app/config"
+      - "./data:/home/node/app/data"
+      - "./plugins:/home/node/app/plugins"
+      - "./extensions:/home/node/app/public/scripts/extensions/third-party"
+    restart: unless-stopped
+    dns: 
+      - 8.8.8.8
+      - 8.8.4.4
+    labels:
+      homepage.group: Media
+      homepage.name: Silly Tavern
+      homepage.icon: chatpad-ai     
+      homepage.href: http://10.0.0.51:8008

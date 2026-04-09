@@ -1,0 +1,12 @@
+services:
+    it-tools:
+        container_name: it-tools
+        image: 'corentinth/it-tools:latest'
+        ports:
+            - '8006:80'
+        restart: unless-stopped
+        labels:
+            homepage.group: Utili
+            homepage.name: It-tools
+            homepage.icon: it-tools
+            homepage.href: http://10.0.0.51:8006

@@ -1,0 +1,15 @@
+services:
+    uptime-kuma:
+        image: "louislam/uptime-kuma:2"
+        container_name: uptime-kuma
+        volumes:
+            - "./data:/app/data"
+            - "/var/run:/var/run"
+        ports:
+            - "3001:3001"
+        restart: unless-stopped
+        labels:
+            homepage.group: Utili
+            homepage.name: Uptime Kuma
+            homepage.icon: uptime-kuma
+            homepage.href: http://10.0.0.51:3001

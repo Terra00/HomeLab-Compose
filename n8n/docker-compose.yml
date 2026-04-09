@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    user: "1000:1000"
+    volumes:
+      - "./data:/home/node/.n8n"
+    environment:
+      N8N_SECURE_COOKIE: ${N8N_SECURE_COOKIE}
+      GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
+      WEBHOOK_URL: ${WEBHOOK_URL}
+    ports:
+      - "8009:5678"
+    container_name: n8n
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    restart: unless-stopped
+    labels:
+      homepage.group: Utili
+      homepage.name: n8n
+      homepage.icon: n8n
+      homepage.href: http://10.0.0.51:8009

@@ -1,0 +1,15 @@
+services:
+  webdav:
+    image: hacdias/webdav
+    container_name: obsidian-livesync
+    ports:
+      - "8013:8080"
+    volumes:
+      - ./data:/data
+      - ./config.yaml:/config.yaml
+    command: --config /config.yaml
+    restart: unless-stopped
+    labels:
+      homepage.group: Non accessibili
+      homepage.name: Obsidian Sync
+      homepage.icon: obsidian

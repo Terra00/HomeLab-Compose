@@ -1,0 +1,17 @@
+services:
+  actual_server:
+    container_name: actual-budget
+    image: docker.io/actualbudget/actual-server:latest
+    ports:
+      - "8014:5006"
+    volumes:
+      - ./data:/data
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    restart: unless-stopped
+    labels:
+      homepage.group: Utili
+      homepage.name: Actual
+      homepage.icon: actual-budget
+      homepage.href: http://10.0.0.51:8014

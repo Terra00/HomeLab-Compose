@@ -1,0 +1,25 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Web:
+    - Fritzbox:
+        href: http://10.0.0.1
+        icon: fritzbox
+    - Fritzbox Repeater:
+        href: http://10.0.0.3/
+        icon: fritzbox
+- Media:
+    - Frigate:
+        href: http://10.0.0.52:5000/
+        icon: frigate
+- Utili:
+    - HomeAssistant:
+        href: http://homeassistant.local:8123/lovelace/0
+        icon: home-assistant
+    - BentoPDF:
+        href: http://10.0.0.52:3000/
+        icon: bentopdf

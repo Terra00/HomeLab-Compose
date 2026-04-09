@@ -5,8 +5,11 @@
 .DS_Store
 Thumbs.db
 
-# Sicurezza: ignora tutti i file .env
+# Sicurezza: ignora tutti i file .env e config
 *.env
+*config.yaml
+*config.yml
+*config.toml
 # Eccezione specifica
 !server.env
 
@@ -28,6 +31,12 @@ Thumbs.db
 **/db/
 **/upload-dir/
 **/renewal/
+**/config/
+**/extensions/
+**/plugins/
+**/ect-dnsmasq.d/
+**/etc-dnsmasq.d/
+**/etc-pihole/
 
 # Correzione refusi e cartelle di sistema
 **/etc/
@@ -35,22 +44,12 @@ Thumbs.db
 
 # --- CONFIGURAZIONI SPECIFICHE ---
 
-# Pi-hole
-pi-hole/etc-dnsmasq.d/
-pi-hole/etc-pihole/*
-!pi-hole/etc-pihole/cname.conf
-!pi-hole/etc-pihole/custom.list
-!pi-hole/etc-pihole/pihole-FTL.conf
-!pi-hole/etc-pihole/setupVars.conf
-
 # Homepage: inclusione esplicita della cartella e dei suoi contenuti
 !homepage/config/
 !homepage/config/**
 
-# Obsidian: ignora i dati ma tieni il resto
-!obsidian/
-!obsidian/**
-obsidian/data/
+# Obsidian: ignora config
+obsidian/config.yaml
 
 # Frigate: solo il file config specifico
 !frigate/

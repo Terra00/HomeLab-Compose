@@ -1,0 +1,20 @@
+services:
+  pihole:
+    container_name: pi-hole
+    image: pihole/pihole:latest
+    environment:
+      TZ: Europe/Rome
+      WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8000:80/tcp"
+    volumes:
+      - "./etc-pihole:/etc/pihole"
+      - "./etc-dnsmasq.d:/etc/dnsmasq.d"
+    restart: unless-stopped
+    labels:
+      homepage.group: Web
+      homepage.name: Pi-hole
+      homepage.icon: pi-hole
+      homepage.href: http://10.0.0.51:8000/admin

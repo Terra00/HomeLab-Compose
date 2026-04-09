@@ -1,0 +1,19 @@
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: jellyfin/jellyfin:latest
+    ports:
+      - 8005:8096
+    volumes:
+      - "./config:/config"
+      - "./cache:/cache"
+      - "/home/terra/shared/media:/media"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    restart: "unless-stopped"
+    labels:
+      homepage.group: Media
+      homepage.name: Jellyfin
+      homepage.icon: jellyfin
+      homepage.href: http://10.0.0.51:8005
