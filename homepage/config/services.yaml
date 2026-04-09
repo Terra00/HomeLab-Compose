@@ -14,12 +14,12 @@
         icon: fritzbox
 - Media:
     - Frigate:
-        href: http://10.0.0.52:5000/
+        href: http://10.0.0.52:8016/
         icon: frigate
 - Utili:
     - HomeAssistant:
         href: http://homeassistant.local:8123/lovelace/0
         icon: home-assistant
     - BentoPDF:
-        href: http://10.0.0.52:3000/
+        href: http://10.0.0.52:8015/
         icon: bentopdf
