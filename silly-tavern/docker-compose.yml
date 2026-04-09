@@ -13,11 +13,11 @@ services:
       - "./plugins:/home/node/app/plugins"
       - "./extensions:/home/node/app/public/scripts/extensions/third-party"
     restart: unless-stopped
-    dns: 
+    dns:
       - 8.8.8.8
       - 8.8.4.4
     labels:
       homepage.group: Media
       homepage.name: Silly Tavern
-      homepage.icon: chatpad-ai     
+      homepage.icon: sillytavern
       homepage.href: http://10.0.0.51:8008

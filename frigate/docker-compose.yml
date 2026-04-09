@@ -23,3 +23,8 @@ services:
     environment:
       FRIGATE_RTSP_PASSWORD: ${FRIGATE_RTSP_PASSWORD}
       LIBVA_DRIVER_NAME: ${LIBVA_DRIVER_NAME}
+    #labels:
+    #  homepage.group: Media
+    #  homepage.name: Frigate
+    #  homepage.icon: frigate
+    #  homepage.href: http://10.0.0.51:8016

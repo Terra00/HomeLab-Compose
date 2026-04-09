@@ -1,11 +1,15 @@
 services:
     agent:
-        image: 'portainer/agent:2.39.1'
+        image: "portainer/agent:2.39.1"
         volumes:
-            - '/:/host'
-            - '/var/lib/docker/volumes:/var/lib/docker/volumes'
-            - '/var/run/docker.sock:/var/run/docker.sock'
+            - "/:/host"
+            - "/var/lib/docker/volumes:/var/lib/docker/volumes"
+            - "/var/run/docker.sock:/var/run/docker.sock"
         restart: always
         container_name: portainer_agent
         ports:
-            - '9001:9001'
+            - "9001:9001"
+        labels:
+            homepage.group: Non accessibili
+            homepage.name: Portainer Agent
+            homepage.icon: portainer

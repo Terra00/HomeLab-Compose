@@ -9,3 +9,7 @@ services:
         container_name: tugtainer-agent
         ports:
             - "9413:8001"
+        #labels:
+        #    homepage.group: Non accessibili
+        #    homepage.name: Tugtainer Agent
+        #    homepage.icon: tugtainer

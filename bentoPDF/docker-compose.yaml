@@ -4,3 +4,8 @@ services:
     ports:
       - "8015:8080"
     restart: unless-stopped
+    #labels:
+    #  homepage.group: Utili
+    #  homepage.name: BentoPDF
+    #  homepage.icon: actual-budget
+    #  homepage.href: http://10.0.0.51:8015
