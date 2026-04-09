@@ -51,7 +51,3 @@ Thumbs.db
 # Obsidian: ignora config
 obsidian/config.yaml
 
-# Frigate: solo il file config specifico
-!frigate/
-!frigate/config/
-!frigate/config/config.yaml

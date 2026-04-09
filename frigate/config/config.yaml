@@ -1,0 +1,153 @@
+mqtt:
+  host: 10.0.0.50
+  port: 1883
+  user: mqtt_user
+  password: mqtt_password
+
+ffmpeg:
+  hwaccel_args: preset-vaapi
+  input_args: preset-rtsp-restream
+  output_args:
+    record: preset-record-generic
+
+detectors:
+  coral:
+    type: edgetpu
+    device: usb
+
+detect:
+  enabled: true
+  width: 640
+  height: 360
+  fps: 5
+
+objects:
+  track:
+    - person
+    - cat
+  filters:
+    person:
+      min_area: 2500
+      threshold: 0.75
+    cat:
+      min_area: 1200
+      threshold: 0.7
+
+record:
+  enabled: true
+  continuous:
+    days: 6
+  motion:
+    days: 7
+  alerts:
+    retain:
+      days: 12
+      mode: all
+  detections:
+    retain:
+      days: 12
+      mode: all
+
+snapshots:
+  enabled: true
+  timestamp: true
+  bounding_box: true
+  retain:
+    default: 10
+
+cameras:
+
+  cam1:
+    ffmpeg:
+      inputs:
+        - path: rtsp://10.0.0.101:554/stream
+          roles:
+            - detect
+            - record
+    detect:
+      width: 704
+      height: 396
+      fps: 5
+    motion:
+      mask: 0.409,0.092,1,0.244,1,0,0.41,0.001
+      threshold: 25
+      contour_area: 100
+    objects:
+      filters:
+        person:
+          min_area: 3000
+          threshold: 0.75
+    zones:
+      Persona_1:
+        coordinates: 0.138,0.578,0.33,0.203,0.838,0.382,0.658,0.853
+        inertia: 3
+    review:
+      alerts:
+        required_zones:
+          - Persona_1
+
+  cam3:
+    ffmpeg:
+      inputs:
+        - path: rtsp://tapoha:tapohaos@10.0.0.103:554/stream2
+          roles:
+            - detect
+        - path: rtsp://tapoha:tapohaos@10.0.0.103:554/stream1
+          roles:
+            - record
+    motion:
+      threshold: 25
+      contour_area: 100
+    objects:
+      filters:
+        cat:
+          min_area: 800
+          threshold: 0.65
+    zones:
+      gatto:
+        coordinates: 
+          0.561,0.463,0.534,0.541,0.567,0.787,0.756,0.768,0.729,0.217,0.556,0.267
+        objects:
+          - cat
+        inertia: 1
+        loitering_time: 0
+
+  cam2:
+    ffmpeg:
+      inputs:
+        - path: rtsp://10.0.0.102:554/stream
+          roles:
+            - detect
+            - record
+    detect:
+      fps: 3
+    motion:
+      threshold: 30
+      contour_area: 150
+
+  cam4:
+    ffmpeg:
+      inputs:
+        - path: rtsp://tapoha:tapohaos@10.0.0.104:554/stream2
+          roles:
+            - detect
+        - path: rtsp://tapoha:tapohaos@10.0.0.104:554/stream1
+          roles:
+            - record
+    motion:
+      mask: 0.596,0.003,0.595,0.157,0.881,0.773,0.965,0
+      threshold: 35
+      contour_area: 200
+    objects:
+      filters:
+        person:
+          min_area: 4000
+
+version: 0.17-0
+camera_groups:
+  Esterne:
+    order: 1
+    icon: LuGlobeLock
+    cameras:
+      - cam1
+      - cam2
