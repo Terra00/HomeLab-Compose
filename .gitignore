@@ -1,0 +1,58 @@
+# --- FILE TEMPORANEI E SEGRETI ---
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Sicurezza: ignora tutti i file .env
+*.env
+# Eccezione specifica
+!server.env
+
+# --- CARTELLE DATI (DOCKER/CONTAINER) ---
+# Usiamo / all'inizio se queste cartelle sono nella root, 
+# oppure pattern più specifici per evitare falsi positivi nel codice.
+**/data/
+**/var/
+**/redisdata/
+**/pgdata/
+**/media/
+**/export/
+**/consume/
+**/volume/
+**/cache/
+**/letsencrypt/
+**/files/
+**/postgresql/
+**/db/
+**/upload-dir/
+**/renewal/
+
+# Correzione refusi e cartelle di sistema
+**/etc/
+**/ect/
+
+# --- CONFIGURAZIONI SPECIFICHE ---
+
+# Pi-hole
+pi-hole/etc-dnsmasq.d/
+pi-hole/etc-pihole/*
+!pi-hole/etc-pihole/cname.conf
+!pi-hole/etc-pihole/custom.list
+!pi-hole/etc-pihole/pihole-FTL.conf
+!pi-hole/etc-pihole/setupVars.conf
+
+# Homepage: inclusione esplicita della cartella e dei suoi contenuti
+!homepage/config/
+!homepage/config/**
+
+# Obsidian: ignora i dati ma tieni il resto
+!obsidian/
+!obsidian/**
+obsidian/data/
+
+# Frigate: solo il file config specifico
+!frigate/
+!frigate/config/
+!frigate/config/config.yaml
