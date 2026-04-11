@@ -18,6 +18,8 @@ services:
           size: 2000000000
     ports:
       - "8016:5000"
+      - "8555:8555"
+      - "8554:8554"
     env_file:
       - .env
     environment:
