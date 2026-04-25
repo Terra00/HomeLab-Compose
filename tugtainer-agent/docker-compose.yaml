@@ -1,6 +1,6 @@
 services:
     quenary:
-        image: "ghcr.io/quenary/tugtainer-agent:1"
+        image: "ghcr.io/quenary/tugtainer-agent:latest"
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock:ro"
         environment:
