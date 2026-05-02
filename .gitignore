@@ -49,6 +49,7 @@ Thumbs.db
 # Homepage: inclusione esplicita della cartella e dei suoi contenuti
 !homepage/config/
 !homepage/config/**
+homepage/config/logs/
 
 # Obsidian: ignora config
 obsidian/config.yaml
