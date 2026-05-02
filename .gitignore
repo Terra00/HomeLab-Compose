@@ -2,6 +2,7 @@
 *.tmp
 *.bak
 *.swp
+*.log
 .DS_Store
 Thumbs.db
 
@@ -37,6 +38,7 @@ Thumbs.db
 **/ect-dnsmasq.d/
 **/etc-dnsmasq.d/
 **/etc-pihole/
+**/logs/
 
 # Correzione refusi e cartelle di sistema
 **/etc/
@@ -51,3 +53,5 @@ Thumbs.db
 # Obsidian: ignora config
 obsidian/config.yaml
 
+# Frigate: ignora config
+!frigate/config/config.yaml
