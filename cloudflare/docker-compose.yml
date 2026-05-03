@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     env_file: .env
     environment:
-      CF_API_TOKEN: ${CF_API_TOKEN}
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
       DOMAINS: ${DOMAINS}
       PROXIED: ${PROXIED}
       IP6_PROVIDER: ${IP6_PROVIDER}
