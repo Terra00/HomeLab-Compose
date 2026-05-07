@@ -1,0 +1,15 @@
+services:
+  dashboard:
+    image: ghcr.io/theduffman85/linux-update-dashboard:latest
+    container_name: linux-update-dashboard
+    restart: unless-stopped
+    ports:
+      - "8012:3001"
+    volumes:
+      - ./data:/data
+    environment:
+      - LUDASH_ENCRYPTION_KEY=${LUDASH_ENCRYPTION_KEY}
+      - TZ=Europe/Berlin
+      - LUDASH_DB_PATH=/data/dashboard.db
+      - LUDASH_BASE_URL=http://localhost:8012
+      - NODE_ENV=production
