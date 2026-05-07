@@ -9,8 +9,3 @@ services:
       - ./data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
-    labels:
-      homepage.group: Utili
-      homepage.name: Portainer
-      homepage.icon: portainer      
-      homepage.href: http://10.0.0.51:9000

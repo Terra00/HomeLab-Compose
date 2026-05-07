@@ -11,8 +11,3 @@ services:
     dns:
       - 8.8.8.8
       - 8.8.4.4
-    labels:
-      homepage.group: Utili
-      homepage.name: Tugtainer
-      homepage.icon: tugtainer
-      homepage.href: http://10.0.0.51:8011

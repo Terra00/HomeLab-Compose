@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   broker:
     container_name: paperless_broker
@@ -9,10 +7,6 @@ services:
       - ./redisdata:/data
     networks:
       - paperless_network
-    labels:
-      homepage.group: Non accessibili
-      homepage.name: Paperless broker
-      homepage.icon: paperless
 
   db:
     container_name: paperless_db
@@ -26,10 +20,6 @@ services:
       POSTGRES_PASSWORD: paperless
     networks:
       - paperless_network
-    labels:
-      homepage.group: Non accessibili
-      homepage.name: Paperless DB
-      homepage.icon: paperless
 
   webserver:
     container_name: paperless_web
@@ -56,11 +46,6 @@ services:
       PAPERLESS_TIKA_ENDPOINT: http://tika:9998
     networks:
       - paperless_network
-    labels:
-      homepage.group: Utili
-      homepage.name: Paperless
-      homepage.icon: paperless
-      homepage.href: http://10.0.0.51:8002
 
   gotenberg:
     container_name: paperless_gotenberg
@@ -72,10 +57,6 @@ services:
       - "--chromium-allow-list=file:///tmp/.*"
     networks:
       - paperless_network
-    labels:
-      homepage.group: Non accessibili
-      homepage.name: Paperless gotenberg
-      homepage.icon: paperless
 
   tika:
     container_name: paperless_tika
@@ -83,10 +64,6 @@ services:
     restart: unless-stopped
     networks:
       - paperless_network
-    labels:
-      homepage.group: Non accessibili
-      homepage.name: Paperless tika
-      homepage.icon: paperless
 
 networks:
   paperless_network:

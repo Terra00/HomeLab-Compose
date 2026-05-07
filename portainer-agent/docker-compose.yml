@@ -9,7 +9,3 @@ services:
         container_name: portainer_agent
         ports:
             - "9001:9001"
-        labels:
-            homepage.group: Non accessibili
-            homepage.name: Portainer Agent
-            homepage.icon: portainer

@@ -9,8 +9,3 @@ services:
       - ./data/:/data/
     ports:
       - 8007:80
-    labels:
-      homepage.group: Utili
-      homepage.name: Vaultwarden
-      homepage.icon: vaultwarden
-      homepage.href: http://10.0.0.51:8007

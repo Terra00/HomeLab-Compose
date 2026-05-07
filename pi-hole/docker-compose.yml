@@ -13,8 +13,3 @@ services:
       - "./etc-pihole:/etc/pihole"
       - "./etc-dnsmasq.d:/etc/dnsmasq.d"
     restart: unless-stopped
-    labels:
-      homepage.group: Web
-      homepage.name: Pi-hole
-      homepage.icon: pi-hole
-      homepage.href: http://10.0.0.51:8000/admin

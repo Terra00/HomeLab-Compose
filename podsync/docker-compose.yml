@@ -11,9 +11,3 @@ services:
       - 8.8.8.8
       - 8.8.4.4
     restart: "unless-stopped"
-    labels:
-      homepage.group: Media
-      homepage.name: Podsync
-      homepage.icon: google-podcasts      
-      homepage.href: http://10.0.0.51:8004
-

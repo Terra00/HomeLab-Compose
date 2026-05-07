@@ -9,7 +9,3 @@ services:
       - ./config.yaml:/config.yaml
     command: --config /config.yaml
     restart: unless-stopped
-    labels:
-      homepage.group: Non accessibili
-      homepage.name: Obsidian Sync
-      homepage.icon: obsidian

@@ -5,13 +5,8 @@ services:
     ports:
       - 8001:3000
     volumes:
-      - ./config:/app/config 
+      - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
     environment:
       HOMEPAGE_ALLOWED_HOSTS: "*"
-    labels:
-      homepage.group: Utili
-      homepage.name: Homepage
-      homepage.icon: homepage
-      homepage.href: http://10.0.0.51:8001

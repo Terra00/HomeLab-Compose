@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   cloudflare-ddns:
     image: favonia/cloudflare-ddns:latest
@@ -14,7 +12,3 @@ services:
       IP_PROVIDER: ${IP_PROVIDER}
       CHECK_INTERVAL: ${CHECK_INTERVAL}
       TZ: ${TZ}
-    labels:
-      homepage.group: Web
-      homepage.name: Cloudflare
-      homepage.icon: cloudflare

@@ -6,10 +6,5 @@ services:
             - "./data:/app/data"
             - "/var/run:/var/run"
         ports:
-            - "3001:3001"
+            - "8015:3001"
         restart: unless-stopped
-        labels:
-            homepage.group: Utili
-            homepage.name: Uptime Kuma
-            homepage.icon: uptime-kuma
-            homepage.href: http://10.0.0.51:3001
