@@ -32,7 +32,11 @@
         href: http://10.0.0.51:8011
         server: my-docker
         container: tugtainer
-
+    - Linux Updater:
+        icon: linux
+        href: http://10.0.0.51:8012
+        server: my-docker
+        container: linux-update-dashboard
 - Smart Home & Rete:
     - HomeAssistant:
         icon: home-assistant
@@ -43,7 +47,7 @@
           key: "{{HOMEPAGE_VAR_HA_TOKEN}}"
     - Frigate:
         icon: frigate
-        href: http://10.0.0.50:8016/
+        href: http://10.0.0.52:8016/
         server: server-secondario
         container: frigate
         widget:
@@ -84,7 +88,7 @@
         container: vaultwarden
     - BentoPDF:
         icon: bentopdf
-        href: http://10.0.0.52:8015/
+        href: http://10.0.0.52:8017/
         server: server-secondario
         container: bentopdf
     - Tandoor:
