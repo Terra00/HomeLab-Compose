@@ -1,25 +1,132 @@
----
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/services/
+- Infrastruttura & Gestione:
+    - Portainer:
+        icon: portainer
+        href: http://10.0.0.51:9000
+        server: my-docker
+        container: portainer
+    - NGINX Proxy Manager:
+        icon: nginx-proxy-manager
+        href: http://10.0.0.51:81
+        server: my-docker
+        container: nginx-proxy-manager
+        widget:
+          type: npm
+          url: http://10.0.0.51:81
+          username: "{{HOMEPAGE_VAR_NPM_USER}}"
+          password: "{{HOMEPAGE_VAR_NPM_PASS}}"
+    - Uptime Kuma:
+        icon: uptime-kuma
+        href: http://10.0.0.51:8015
+        server: my-docker
+        container: uptime-kuma
+        widget:
+          type: uptimekuma
+          url: http://10.0.0.51:8015
+          slug: homepage
+    - Cloudflare:
+        icon: cloudflare
+        server: my-docker
+        container: cloudflare-ddns
+    - Tugtainer:
+        icon: tugtainer
+        href: http://10.0.0.51:8011
+        server: my-docker
+        container: tugtainer
 
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/services/
-
-- Web:
-    - Fritzbox:
-        href: http://10.0.0.1
-        icon: fritzbox
-    - Fritzbox Repeater:
-        href: http://10.0.0.3/
-        icon: fritzbox
-- Media:
-    - Frigate:
-        href: http://10.0.0.52:8016/
-        icon: frigate
-- Utili:
+- Smart Home & Rete:
     - HomeAssistant:
-        href: http://homeassistant.local:8123/lovelace/0
         icon: home-assistant
+        href: http://10.0.0.50:8123/lovelace/0
+        widget:
+          type: homeassistant
+          url: http://10.0.0.50:8123
+          key: "{{HOMEPAGE_VAR_HA_TOKEN}}"
+    - Frigate:
+        icon: frigate
+        href: http://10.0.0.50:8016/
+        server: server-secondario
+        container: frigate
+        widget:
+          type: frigate
+          url: http://10.0.0.52:8016
+    - Pi-hole:
+        icon: pi-hole
+        href: http://10.0.0.51:8000/admin/login
+        server: my-docker
+        container: pi-hole
+        widget:
+          type: pihole
+          url: http://10.0.0.51:8000
+          version: 6
+          key: "{{HOMEPAGE_VAR_PIHOLE_KEY}}"
+    - Fritzbox:
+        icon: fritzbox
+        href: http://10.0.0.1
+        widget:
+          type: fritzbox
+          url: http://10.0.0.1
+          username: "{{HOMEPAGE_VAR_FRITZ_USER}}"
+          password: "{{HOMEPAGE_VAR_FRITZ_PASS}}"
+    - Fritzbox Repeater:
+        icon: fritzbox
+        href: http://10.0.0.3/
+
+- Produttività & Gestione:
+    - Paperless:
+        icon: paperless-ngx
+        href: http://10.0.0.51:8002
+        server: my-docker
+        container: paperless_web
+    - Vaultwarden:
+        icon: vaultwarden
+        href: http://10.0.0.51:8007
+        server: my-docker
+        container: vaultwarden
     - BentoPDF:
-        href: http://10.0.0.52:8015/
         icon: bentopdf
+        href: http://10.0.0.52:8015/
+        server: server-secondario
+        container: bentopdf
+    - Tandoor:
+        icon: tandoor-recipes
+        href: http://10.0.0.51:8010
+        server: my-docker
+        container: tandoor
+    - Actual:
+        icon: actual-budget
+        href: http://10.0.0.51:8014
+        server: my-docker
+        container: actual-budget
+- Media & Intrattenimento:
+    - Jellyfin:
+        icon: jellyfin
+        href: http://10.0.0.51:8005
+        server: my-docker
+        container: jellyfin
+    - Podsync:
+        icon: google-podcasts
+        href: http://10.0.0.51:8014
+        server: my-docker
+        container: podsync
+    - Silly Taver:
+        icon: sillytavern
+        href: http://10.0.0.51:8014
+        server: my-docker
+        container: sillytavern
+
+- Sviluppo & Automazione:
+    - n8n:
+        icon: n8n
+        href: http://10.0.0.51:8009
+        server: my-docker
+        container: n8n
+    - NTFY:
+        icon: ntfy
+        href: http://10.0.0.51:8003
+        server: my-docker
+        container: ntfy
+    - IT-Tools:
+        icon: it-tools
+        href: http://10.0.0.51:8006
+        server: my-docker
+        container: it-tools

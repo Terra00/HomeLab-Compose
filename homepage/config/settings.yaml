@@ -1,7 +1,3 @@
----
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/settings/
-
 providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
@@ -11,21 +7,23 @@ background:
   image: https://wallpapers.com/images/high/blue-4k-firewall-web-spdkbjergnyqvzcf.webp
   blur: xl
   saturate: 40
-  britness: 25
+  brightness: 25
   opacity: 50
 showStats: true
 
-
 layout:
-  Utili:
+  Infrastruttura & Gestione:
     style: column
-    columns: 2
-  Media:
+    columns: 1
+  Smart Home & Rete:
     style: column
-    columns: 2
-  Web:
+    columns: 1
+  Produttività & Gestione:
     style: column
-    columns: 2
-  Non accessibili:
+    columns: 1
+  Media & Intrattenimento:
     style: column
-    columns: 2
+    columns: 1
+  Sviluppo & Automazione:
+    style: column
+    columns: 1
