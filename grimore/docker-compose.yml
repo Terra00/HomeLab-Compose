@@ -1,13 +1,13 @@
 services:
   grimoire:
-    name: grimoire
+    container_name: grimoire
     image: hunterreadca/grimoire:latest
     ports:
       - "8018:9481"
     env_file: .env
     environment:
-      SECRET_KEY: ${{SECRET_KEY}}
-      VALKEY_URL: ${{VALKEY_URL}}
+      SECRET_KEY: ${SECRET_KEY}
+      VALKEY_URL: ${VALKEY_URL}
     volumes:
       - /home/terra/library:/app/library:ro
       - ./data/grimore:/app/data
@@ -16,5 +16,6 @@ services:
 
   valkey:
     image: valkey/valkey:8-alpine
+    container_name: valkey
     volumes:
       - ./data/valkey:/data
