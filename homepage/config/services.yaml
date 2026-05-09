@@ -109,14 +109,19 @@
         container: jellyfin
     - Podsync:
         icon: google-podcasts
-        href: http://10.0.0.51:8014
+        href: http://10.0.0.51:8004
         server: my-docker
         container: podsync
     - Silly Taver:
         icon: sillytavern
-        href: http://10.0.0.51:8014
+        href: http://10.0.0.51:8008
         server: my-docker
         container: sillytavern
+    - Grimoire:
+        icon: grimoire
+        href: http://10.0.0.51:8018
+        server: server-secondario
+        container: grimoire
 
 - Sviluppo & Automazione:
     - n8n:

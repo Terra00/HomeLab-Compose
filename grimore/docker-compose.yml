@@ -1,0 +1,18 @@
+services:
+  grimoire:
+    image: hunterreadca/grimoire:latest
+    ports:
+      - "8018:9481"
+    environment:
+      SECRET_KEY: "generate-with-openssl-rand-hex-32"
+      VALKEY_URL: "redis://valkey:6379/0"
+    volumes:
+      - /home/terra/library:/app/library:ro
+      - ./data/grimore:/app/data
+    depends_on:
+      - valkey
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    volumes:
+      - ./data/valkey:/data
