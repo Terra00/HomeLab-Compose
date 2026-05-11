@@ -1,19 +1,9 @@
-- Infrastruttura & Gestione:
+- Infrastruttura:
     - Portainer:
         icon: portainer
         href: http://10.0.0.51:9000
         server: my-docker
         container: portainer
-    - NGINX Proxy Manager:
-        icon: nginx-proxy-manager
-        href: http://10.0.0.51:81
-        server: my-docker
-        container: nginx-proxy-manager
-        widget:
-          type: npm
-          url: http://10.0.0.51:81
-          username: "{{HOMEPAGE_VAR_NPM_USER}}"
-          password: "{{HOMEPAGE_VAR_NPM_PASS}}"
     - Uptime Kuma:
         icon: uptime-kuma
         href: http://10.0.0.51:8015
@@ -23,10 +13,6 @@
           type: uptimekuma
           url: http://10.0.0.51:8015
           slug: homepage
-    - Cloudflare:
-        icon: cloudflare
-        server: my-docker
-        container: cloudflare-ddns
     - Tugtainer:
         icon: tugtainer
         href: http://10.0.0.51:8011
@@ -75,7 +61,7 @@
         icon: fritzbox
         href: http://10.0.0.3/
 
-- Produttività & Gestione:
+- Produttività:
     - Paperless:
         icon: paperless-ngx
         href: http://10.0.0.51:8002
@@ -119,10 +105,9 @@
         container: sillytavern
     - Grimoire:
         icon: grimoire
-        href: http://10.0.0.51:8018
+        href: http://10.0.0.52:8018
         server: server-secondario
         container: grimoire
-
 - Sviluppo & Automazione:
     - n8n:
         icon: n8n
