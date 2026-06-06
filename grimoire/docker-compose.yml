@@ -13,9 +13,11 @@ services:
       - ./data/grimore:/app/data
     depends_on:
       - valkey
+    restart: unless-stopped
 
   valkey:
     image: valkey/valkey:8-alpine
     container_name: valkey
     volumes:
       - ./data/valkey:/data
+    restart: unless-stopped

@@ -1,9 +1,19 @@
 - Infrastruttura:
+    - Linux Updater:
+        icon: linux
+        href: http://10.0.0.51:8012
+        server: my-docker
+        container: linux-update-dashboard
     - Portainer:
         icon: portainer
         href: http://10.0.0.51:9000
         server: my-docker
         container: portainer
+    - Tugtainer:
+        icon: tugtainer
+        href: http://10.0.0.51:8011
+        server: my-docker
+        container: tugtainer
     - Uptime Kuma:
         icon: uptime-kuma
         href: http://10.0.0.51:8015
@@ -13,81 +23,13 @@
           type: uptimekuma
           url: http://10.0.0.51:8015
           slug: homepage
-    - Tugtainer:
-        icon: tugtainer
-        href: http://10.0.0.51:8011
-        server: my-docker
-        container: tugtainer
-    - Linux Updater:
-        icon: linux
-        href: http://10.0.0.51:8012
-        server: my-docker
-        container: linux-update-dashboard
-- Smart Home & Rete:
-    - HomeAssistant:
-        icon: home-assistant
-        href: http://10.0.0.50:8123/lovelace/0
-        widget:
-          type: homeassistant
-          url: http://10.0.0.50:8123
-          key: "{{HOMEPAGE_VAR_HA_TOKEN}}"
-    - Frigate:
-        icon: frigate
-        href: http://10.0.0.52:8016/
-        server: server-secondario
-        container: frigate
-        widget:
-          type: frigate
-          url: http://10.0.0.52:8016
-    - Pi-hole:
-        icon: pi-hole
-        href: http://10.0.0.51:8000/admin/login
-        server: my-docker
-        container: pi-hole
-        widget:
-          type: pihole
-          url: http://10.0.0.51:8000
-          version: 6
-          key: "{{HOMEPAGE_VAR_PIHOLE_KEY}}"
-    - Fritzbox:
-        icon: fritzbox
-        href: http://10.0.0.1
-        widget:
-          type: fritzbox
-          url: http://10.0.0.1
-          username: "{{HOMEPAGE_VAR_FRITZ_USER}}"
-          password: "{{HOMEPAGE_VAR_FRITZ_PASS}}"
-    - Fritzbox Repeater:
-        icon: fritzbox
-        href: http://10.0.0.3/
 
-- Produttività:
-    - Paperless:
-        icon: paperless-ngx
-        href: http://10.0.0.51:8002
-        server: my-docker
-        container: paperless_web
-    - Vaultwarden:
-        icon: vaultwarden
-        href: http://10.0.0.51:8007
-        server: my-docker
-        container: vaultwarden
-    - BentoPDF:
-        icon: bentopdf
-        href: http://10.0.0.52:8017/
-        server: server-secondario
-        container: bentopdf
-    - Tandoor:
-        icon: tandoor-recipes
-        href: http://10.0.0.51:8010
-        server: my-docker
-        container: tandoor
-    - Actual:
-        icon: actual-budget
-        href: http://10.0.0.51:8014
-        server: my-docker
-        container: actual-budget
 - Media & Intrattenimento:
+    - Grimoire:
+        icon: grimoire
+        href: http://10.0.0.52:8018
+        server: server-secondario
+        container: grimoire
     - Jellyfin:
         icon: jellyfin
         href: http://10.0.0.51:8005
@@ -103,12 +45,78 @@
         href: http://10.0.0.51:8008
         server: my-docker
         container: sillytavern
-    - Grimoire:
-        icon: grimoire
-        href: http://10.0.0.52:8018
+
+- Produttività:
+    - Actual:
+        icon: actual-budget
+        href: http://10.0.0.51:8014
+        server: my-docker
+        container: actual-budget
+    - BentoPDF:
+        icon: bentopdf
+        href: http://10.0.0.52:8017/
         server: server-secondario
-        container: grimoire
+        container: bentopdf
+    - Paperless:
+        icon: paperless-ngx
+        href: http://10.0.0.51:8002
+        server: my-docker
+        container: paperless_web
+    - Tandoor:
+        icon: tandoor-recipes
+        href: http://10.0.0.51:8010
+        server: my-docker
+        container: tandoor
+    - Vaultwarden:
+        icon: vaultwarden
+        href: http://10.0.0.51:8007
+        server: my-docker
+        container: vaultwarden
+
+- Smart Home & Rete:
+    - Frigate:
+        icon: frigate
+        href: http://10.0.0.52:8016/
+        server: server-secondario
+        container: frigate
+        widget:
+          type: frigate
+          url: http://10.0.0.52:8016
+    - Fritzbox:
+        icon: fritzbox
+        href: http://10.0.0.1
+        widget:
+          type: fritzbox
+          url: http://10.0.0.1
+          username: "{{HOMEPAGE_VAR_FRITZ_USER}}"
+          password: "{{HOMEPAGE_VAR_FRITZ_PASS}}"
+    - Fritzbox Repeater:
+        icon: fritzbox
+        href: http://10.0.0.3/
+    - HomeAssistant:
+        icon: home-assistant
+        href: http://10.0.0.50:8123/lovelace/0
+        widget:
+          type: homeassistant
+          url: http://10.0.0.50:8123
+          key: "{{HOMEPAGE_VAR_HA_TOKEN}}"
+    - Pi-hole:
+        icon: pi-hole
+        href: http://10.0.0.51:8000/admin/login
+        server: my-docker
+        container: pi-hole
+        widget:
+          type: pihole
+          url: http://10.0.0.51:8000
+          version: 6
+          key: "{{HOMEPAGE_VAR_PIHOLE_KEY}}"
+
 - Sviluppo & Automazione:
+    - IT-Tools:
+        icon: it-tools
+        href: http://10.0.0.51:8006
+        server: my-docker
+        container: it-tools
     - n8n:
         icon: n8n
         href: http://10.0.0.51:8009
@@ -119,8 +127,3 @@
         href: http://10.0.0.51:8003
         server: my-docker
         container: ntfy
-    - IT-Tools:
-        icon: it-tools
-        href: http://10.0.0.51:8006
-        server: my-docker
-        container: it-tools

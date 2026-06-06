@@ -1,7 +1,7 @@
 services:
   bentopdf:
     container_name: bentopdf
-    image: ghcr.io/alam00000/bentopdf:latest
+    image: ghcr.io/alam00000/bentopdf-simple:latest
     ports:
       - "8017:8080"
     restart: unless-stopped

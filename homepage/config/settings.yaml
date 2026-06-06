@@ -12,18 +12,18 @@ background:
 showStats: true
 
 layout:
-  Infrastruttura & Gestione:
+  Infrastruttura:
     style: column
     columns: 1
-  Smart Home & Rete:
+  Smart Home:
     style: column
     columns: 1
-  Produttività & Gestione:
+  Produttività:
     style: column
     columns: 1
-  Media & Intrattenimento:
+  Media:
     style: column
     columns: 1
-  Sviluppo & Automazione:
+  Sviluppo:
     style: column
     columns: 1
