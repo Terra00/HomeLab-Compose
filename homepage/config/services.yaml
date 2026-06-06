@@ -24,7 +24,7 @@
           url: http://10.0.0.51:8015
           slug: homepage
 
-- Media & Intrattenimento:
+- Media:
     - Grimoire:
         icon: grimoire
         href: http://10.0.0.52:8018
@@ -73,7 +73,7 @@
         server: my-docker
         container: vaultwarden
 
-- Smart Home & Rete:
+- Smart Home:
     - Frigate:
         icon: frigate
         href: http://10.0.0.52:8016/
@@ -111,7 +111,7 @@
           version: 6
           key: "{{HOMEPAGE_VAR_PIHOLE_KEY}}"
 
-- Sviluppo & Automazione:
+- Sviluppo:
     - IT-Tools:
         icon: it-tools
         href: http://10.0.0.51:8006
