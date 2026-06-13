@@ -3,6 +3,8 @@ services:
     container_name: tugtainer
     image: quenary/tugtainer:latest
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "8011:80"
     volumes:
