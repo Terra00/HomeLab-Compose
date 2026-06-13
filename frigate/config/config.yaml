@@ -151,3 +151,9 @@ camera_groups:
     cameras:
       - cam1
       - cam2
+  Interne:
+    order: 2
+    icon: LuHouse
+    cameras:
+      - cam3
+      - cam4
