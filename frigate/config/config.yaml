@@ -143,6 +143,51 @@ cameras:
         person:
           min_area: 4000
 
+  cam5:
+    ffmpeg:
+      inputs:
+        - path: rtsp://tapoha:tapohaos@10.0.0.105:554/stream2
+          roles:
+            - detect
+        - path: rtsp://tapoha:tapohaos@10.0.0.105:554/stream1
+          roles:
+            - record
+    motion:
+      threshold: 25
+      contour_area: 100
+    objects:
+      filters:
+        cat:
+          min_area: 800
+          threshold: 0.65
+
+  cam6:
+    ffmpeg:
+      inputs:
+        - path: rtsp://tapoha:tapohaos@10.0.0.106:554/stream2
+          roles:
+            - detect
+        - path: rtsp://tapoha:tapohaos@10.0.0.106:554/stream1
+          roles:
+            - record
+    motion:
+      threshold: 25
+      contour_area: 100
+    objects:
+      filters:
+        cat:
+          min_area: 800
+          threshold: 0.65
+
+birdseye:
+  enabled: True
+  mode: continuous
+  width: 1280
+  height: 720
+  restream: true
+  layout:
+    scaling_factor: 2.0
+
 version: 0.17-0
 camera_groups:
   Esterne:
@@ -151,9 +196,11 @@ camera_groups:
     cameras:
       - cam1
       - cam2
+      - cam5
   Interne:
     order: 2
     icon: LuHouse
     cameras:
       - cam3
       - cam4
+      - cam6
