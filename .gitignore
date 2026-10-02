@@ -39,6 +39,7 @@ Thumbs.db
 **/etc-dnsmasq.d/
 **/etc-pihole/
 **/logs/
+**/media/
 
 # Correzione refusi e cartelle di sistema
 **/etc/

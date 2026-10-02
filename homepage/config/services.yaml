@@ -25,6 +25,11 @@
           slug: homepage
 
 - Media:
+    - Bookorbit:
+        icon: bookorbit
+        href: http://10.0.0.52:8021
+        server: server-secondario
+        container: bookorbit-app
     - Grimoire:
         icon: grimoire
         href: http://10.0.0.52:8018
