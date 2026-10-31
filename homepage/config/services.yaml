@@ -41,7 +41,7 @@
         server: my-docker
         container: jellyfin
     - openGym:
-        icon: openGym
+        icon: opengym
         href: http://10.0.0.51:8022
         server: my-docker
         container: opengym
