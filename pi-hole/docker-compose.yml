@@ -2,6 +2,7 @@ services:
   pihole:
     container_name: pi-hole
     image: pihole/pihole:latest
+    env_file: .env
     environment:
       TZ: Europe/Rome
       WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
