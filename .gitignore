@@ -18,6 +18,7 @@ Thumbs.db
 # Usiamo / all'inizio se queste cartelle sono nella root, 
 # oppure pattern più specifici per evitare falsi positivi nel codice.
 **/data/
+**/coach-auth/
 **/var/
 **/redisdata/
 **/pgdata/

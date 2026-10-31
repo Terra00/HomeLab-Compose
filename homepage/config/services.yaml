@@ -24,7 +24,7 @@
           url: http://10.0.0.51:8015
           slug: homepage
 
-- Media:
+- Lifestyle:
     - Bookorbit:
         icon: bookorbit
         href: http://10.0.0.52:8020
@@ -40,6 +40,11 @@
         href: http://10.0.0.51:8005
         server: my-docker
         container: jellyfin
+    - openGym:
+        icon: openGym
+        href: http://10.0.0.51:8022
+        server: my-docker
+        container: opengym
     - Podsync:
         icon: google-podcasts
         href: http://10.0.0.51:8004
