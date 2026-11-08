@@ -9,7 +9,7 @@ services:
       - "8011:80"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./config:/tugtainer
+      - ./config:/app/data
     dns:
       - 8.8.8.8
       - 8.8.4.4
