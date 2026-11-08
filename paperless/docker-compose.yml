@@ -1,7 +1,13 @@
+# Docker Compose file for running Paperless-ngx (v3.x).
+# Based on the official docker/compose/docker-compose.postgres-tika.yml template.
+#
+# Optional services Apache Tika + Gotenberg are enabled: they provide support
+# for consuming Office documents (Word, Excel, PowerPoint and LibreOffice
+# counterparts) and E-Mails (.eml).
 services:
   broker:
-    container_name: paperless_broker
-    image: docker.io/library/redis:7
+    container_name: paperless_valkey
+    image: docker.io/valkey/valkey:9-alpine
     restart: unless-stopped
     volumes:
       - ./redisdata:/data
@@ -10,10 +16,10 @@ services:
 
   db:
     container_name: paperless_db
-    image: docker.io/library/postgres:16
+    image: docker.io/library/postgres:18
     restart: unless-stopped
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql
     environment:
       POSTGRES_DB: paperless
       POSTGRES_USER: paperless
@@ -41,6 +47,7 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
+      PAPERLESS_DBENGINE: postgresql
       PAPERLESS_TIKA_ENABLED: 1
       PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000
       PAPERLESS_TIKA_ENDPOINT: http://tika:9998
@@ -49,18 +56,20 @@ services:
 
   gotenberg:
     container_name: paperless_gotenberg
-    image: docker.io/gotenberg/gotenberg:8.7
+    image: docker.io/gotenberg/gotenberg:8.37
     restart: unless-stopped
+    # The gotenberg chromium route is used to convert .eml files. We do not
+    # want to allow external content like tracking pixels or even javascript.
     command:
       - "gotenberg"
       - "--chromium-disable-javascript=true"
-      - "--chromium-allow-list=file:///tmp/.*"
+      - "--chromium-allow-list=^file:///tmp/.*"
     networks:
       - paperless_network
 
   tika:
     container_name: paperless_tika
-    image: docker.io/apache/tika:latest
+    image: docker.io/apache/tika:3.3.1.0
     restart: unless-stopped
     networks:
       - paperless_network
